@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{current_user.username}}
+- Perfil{% endblock %}
+{% block content %}
+<header>
+  {{ super() }}
+</header>
+<main>
+  <div class="container-flexbox">
+    <h1>{{ current_user.username }}</h1>
+    <p>Email:
+      {{ current_user.email }}</p>
+    <a href="/delete" class="btn btn-danger">Excluir Conta</a>
+  </div>
+</main>
+{% endblock %}
