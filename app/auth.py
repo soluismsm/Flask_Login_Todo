@@ -27,12 +27,12 @@ def login():
         if user:
             if user.password == password:
                 login_user(user)
-                flash("Você entrou na sua conta!", "success")
+                flash("You have logged into your account!", "success")
                 return redirect(url_for("views.home"))
             else:
-                flash("Senha Incorreta!", "warning")
+                flash("Wrong password!", "warning")
         else:
-            flash("Esta conta não existe!", "warning")
+            flash("This account does not exist!", "warning")
     return render_template("login.html", form=form)
 
 
@@ -48,13 +48,13 @@ def sign_in():
         password = request.form.get("password")
         user = User.query.filter_by(email=email).first()
         if user:
-            flash("Esta conta já existe!", "warning")
+            flash("This account already exists!", "warning")
         else:
             user = User(username=username, email=email, password=password)
             db.session.add(user)
             db.session.commit()
             login_user(user)
-            flash("Conta criada com sucesso", "success")
+            flash("Account created successfully", "success")
             return redirect(url_for("views.home"))
     return render_template("sign-in.html", form=form)
 
@@ -63,5 +63,5 @@ def sign_in():
 @login_required
 def logout():
     logout_user()
-    flash("Você saiu da sua conta!", "success")
+    flash("You logged out of your account!", "success")
     return redirect(url_for("views.home"))

@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% from "bootstrap5/form.html" import render_field %}
-{% block title %}Início - Entrar na Conta{% endblock %}
+{% block title %}Home - Login{% endblock %}
 {% block content %}
 <header>
   {{ super() }}
-  <h1 class="text-center">Entrar na Conta</h1>
+  <h1 class="text-center">Login</h1>
 </header>
 <main>
   <div class="container">
     <form method="post">
       {{ form.csrf_token }}
-      {{ render_field(form.email, placeholder="Digite seu Email") }}
-      {{ render_field(form.password, placeholder="Digite sua Senha")}}
+      {{ render_field(form.email, placeholder="Email") }}
+      {{ render_field(form.password, placeholder="Password")}}
       {{ render_field(form.submit)}}
     </form>
   </div>

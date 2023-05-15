@@ -26,5 +26,5 @@ def delete():
     user = User.query.filter_by(id=user_id).first()
     db.session.delete(user)
     db.session.commit()
-    flash("Você deletou sua conta", "success")
+    flash("You deleted your account!", "success")
     return redirect(url_for("views.home"))

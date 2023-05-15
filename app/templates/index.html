@@ -8,14 +8,14 @@ Home
   {{ super() }}
 </header>
 <div class="container">
-  <h1 class="text-center">Início</h1>
+  <h1 class="text-center">Home Page</h1>
   {% if current_user.is_authenticated %}
   <h2 class="text-center">
-    Seja bem-vindo
+    Welcome,
     {{current_user.username }}!</h2>
   {% else %}
-  <h2 class="text-center">Seja bem-vindo</h2>
-  <h3 class="text-center">Você não está logado!</h3>
+  <h2 class="text-center">Welcome</h2>
+  <h3 class="text-center">You are not logged in!</h3>
   {% endif %}
 </div>
 {% endblock %}
